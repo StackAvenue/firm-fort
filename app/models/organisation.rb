@@ -9,6 +9,9 @@
 #  updated_at  :datetime         not null
 #
 class Organisation < ApplicationRecord
+  #associations
   has_many :users
+
+  #validations
   validates :name, presence: true, uniqueness: true
 end

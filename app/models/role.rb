@@ -9,6 +9,9 @@
 #  updated_at  :datetime         not null
 #
 class Role < ApplicationRecord
+  #associations
   has_many :users
+
+  #validations
   validates :name, presence: true
 end
