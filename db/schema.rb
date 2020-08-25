@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_123702) do
     t.string "last_name"
     t.string "email", null: false
     t.string "designation", null: false
-    t.integer "age"
+    t.integer "age", default: 18
     t.string "gender", null: false
     t.text "address"
     t.string "twitter_url"
