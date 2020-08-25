@@ -16,5 +16,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :users, [:email, :organisation_id], unique: true
   end
 end
