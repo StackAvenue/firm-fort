@@ -19,8 +19,11 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+  #associations
   belongs_to :organisation
   belongs_to :role
+
+  #validations
   validates :first_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :gender, inclusion: { in: %w(male female other) }
