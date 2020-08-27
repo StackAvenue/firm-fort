@@ -8,9 +8,9 @@
 # Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
 
 $LOAD_PATH << '.'
-require 'db/seeds/organisation_seeds.rb'
-require 'db/seeds/role_seeds.rb'
-require 'db/seeds/user_seeds.rb'
+require 'db/seeds/organisation.seed_data.rb'
+require 'db/seeds/role.seed_data.rb'
+require 'db/seeds/user.seed_data.rb'
 
 SeedOrganisation.create_organisation
 SeedRole.create_role
