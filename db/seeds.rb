@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
+
+$LOAD_PATH << '.'
+require 'db/seeds/organisation_seeds.rb'
+require 'db/seeds/role_seeds.rb'
+require 'db/seeds/user_seeds.rb'
+
+SeedOrganisation.create_organisation
+SeedRole.create_role
+SeedUser.create_user
+
