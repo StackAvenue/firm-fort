@@ -11,7 +11,15 @@
 require 'test_helper'
 
 class OrganisationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "save organisation successfully" do 
+    organisation = create(:organisation)
+    assert true, organisation.save
+  end
+
+  test "name must be present" do
+    organisation = build(:organisation, :name => nil)
+    organisation.valid?
+    assert_not_empty organisation.errors[:name]
+  end
+
 end
