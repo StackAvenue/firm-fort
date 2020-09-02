@@ -12,7 +12,7 @@ require 'db/seeds/organisation.seed_data.rb'
 require 'db/seeds/role.seed_data.rb'
 require 'db/seeds/user.seed_data.rb'
 
-SeedOrganisation.create_organisation
-SeedRole.create_role
-SeedUser.create_user
+Organisation.seed
+Role.seed
+User.seed
 
