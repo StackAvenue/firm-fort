@@ -1,10 +1,10 @@
 #seed for organisations
 
-class SeedOrganisation
-  def self.create_organisation
+class Organisation
+  def self.seed
     organisation = Organisation.new(
-      :name            => "StackAvenue",
-      :description     => "StackAvenue"
+      name:             "StackAvenue",
+      description:      "StackAvenue"
     )
     organisation.save!
   end
