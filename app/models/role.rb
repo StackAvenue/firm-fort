@@ -14,4 +14,5 @@ class Role < ApplicationRecord
 
   #validations
   validates :name, presence: true
+  validates :name, inclusion: { in: %w(SuperAdmin Admin Member) }
 end
