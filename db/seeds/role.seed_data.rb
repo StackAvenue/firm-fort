@@ -1,24 +1,14 @@
 #seed for roles
 
-class SeedRole
-  def self.create_role
-    role = Role.new(
-      :name            => "SuperAdmin",
-      :description     => "SuperAdmin"
-    )
-    role.save!
-    
-    role = Role.new(
-      :name            => "Admin",
-      :description     => "Admin"
-    )
-    role.save!
-    
-    role = Role.new(
-      :name            => "Member",
-      :description     => "Member"
-    )
-    role.save!
+class Role
+  def self.seed
+    roles = ["SuperAdmin", "Admin", "Member"]
+    roles.each  { |roles|
+      role = Role.new(
+        name: roles,
+        description: roles
+      )
+      role.save!
+    }
   end
-  
 end
