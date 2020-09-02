@@ -61,4 +61,13 @@ class UserTest < ActiveSupport::TestCase
     user = create(:user)
     assert true, user.save
   end
+
+  test "unique user in an organisation" do
+    user1 = create(:user)
+    assert true, user1.save
+
+    user = build(:user, :email => user1.email, :organisation_id => user1.organisation_id)
+    user.valid?
+    assert_empty user.errors[:organisation_id]
+  end
 end

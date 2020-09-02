@@ -22,4 +22,12 @@ class OrganisationTest < ActiveSupport::TestCase
     assert_not_empty organisation.errors[:name]
   end
 
+  test "name must be unique " do
+    organisation1 = create(:organisation)
+    assert true, organisation1.save
+
+    organisation = build(:organisation, :name => organisation1.name)
+    organisation.valid?
+    assert_not_empty organisation.errors[:name]
+  end
 end
