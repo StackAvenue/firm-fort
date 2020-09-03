@@ -4,7 +4,6 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
     designation { Faker::Lorem.word }
-    age { Faker::Number.number(digits:2) }
     gender { random = ['male', 'female', 'other'].sample }
     address { Faker::Address.city }
     twitter_url {Faker::Internet.name}
