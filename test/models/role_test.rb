@@ -17,8 +17,15 @@ class RoleTest < ActiveSupport::TestCase
   end
 
   test "name must be present" do
-    role = build(:role, :name => nil)
+    role = build(:role, name: nil)
     role.valid?
     assert_not_empty role.errors[:name]
   end
+
+  test "name must be SuperAdmin, Admin or Member only" do
+    role = build(:role, name: Faker::Name.name)
+    assert_not role.valid?
+    assert_equal(["is not included in the list"], role.errors.messages[:name])
+  end
 end
+
