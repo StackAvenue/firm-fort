@@ -17,17 +17,17 @@ class OrganisationTest < ActiveSupport::TestCase
   end
 
   test "name must be present" do
-    organisation = build(:organisation, :name => nil)
-    organisation.valid?
-    assert_not_empty organisation.errors[:name]
+    organisation = build(:organisation, name: nil)
+    assert_not organisation.valid?
+    assert_equal(["can't be blank"],organisation.errors.messages[:name])
   end
 
   test "name must be unique " do
     organisation1 = create(:organisation)
-    assert true, organisation1.save
-
-    organisation = build(:organisation, :name => organisation1.name)
-    organisation.valid?
-    assert_not_empty organisation.errors[:name]
+    
+    organisation = build(:organisation, name: organisation1.name)
+    assert_not organisation.valid?
+    assert_equal(["has already been taken"], organisation.errors.messages[:name])
   end
 end
+
