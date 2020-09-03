@@ -22,39 +22,44 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test "first_name must be present" do
-    user = build(:user, :first_name => nil)
-    user.valid?
-    assert_not_empty user.errors[:first_name]
+    user = build(:user, first_name: nil)
+    assert_not user.valid?
+    assert_equal(["can't be blank"], user.errors.messages[:first_name])
   end
 
   test "email must be present" do
-    user = build(:user, :email => nil)
-    user.valid?
-    assert_not_empty user.errors[:email] 
+    user = build(:user, email: nil)
+    assert_not user.valid?
+    assert_equal(["can't be blank"], user.errors.messages[:email]) 
   end
 
   test "designation must be present" do
-    user = build(:user, :designation => nil)
-    user.valid?
-    assert_empty user.errors[:designation]
+    user = build(:user, designation: nil)
+    assert_not user.valid?
+    assert_equal(["can't be blank"], user.errors.messages[:designation])
   end
   
-  test "age must be present" do
-    user = build(:user, :age => nil)
-    user.valid?
-    assert_empty user.errors[:age]
+  test "deafult age is 18" do
+    user = create(:user)
+    assert_equal 18, user.age
+  end
+
+  test "gender must be male, female or other only" do
+    user = build(:user, gender: Faker::Name.name)
+    assert_not user.valid?
+    assert_equal(["is not included in the list"], user.errors.messages[:gender])
   end
 
   test "organisation must be present" do
-    user = build :user, organisation: nil
-    user.valid?
-    assert_not_empty user.errors[:organisation]
+    user = build(:user, organisation: nil)
+    assert_not user.valid?
+    assert_equal(["must exist"], user.errors.messages[:organisation])
   end 
   
   test "role must be present" do
-    user = build :user, role: nil
-    user.valid?
-    assert_not_empty user.errors[:role]
+    user = build(:user, role: nil)
+    assert_not user.valid?
+    assert_equal(["must exist"], user.errors.messages[:role])
   end  
 
   test "save user successfully" do 
@@ -64,10 +69,9 @@ class UserTest < ActiveSupport::TestCase
 
   test "unique user in an organisation" do
     user1 = create(:user)
-    assert true, user1.save
 
-    user = build(:user, :email => user1.email, :organisation_id => user1.organisation_id)
-    user.valid?
-    assert_empty user.errors[:organisation_id]
+    user = build(:user, email: user1.email, organisation_id: user1.organisation_id)
+    assert_not user.valid?
+    assert_equal(["has already been taken"], user.errors.messages[:email])
   end
 end
