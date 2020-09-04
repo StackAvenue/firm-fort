@@ -33,10 +33,9 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(["can't be blank"], user.errors.messages[:email]) 
   end
 
-  test "designation must be present" do
-    user = build(:user, designation: nil)
-    assert_not user.valid?
-    assert_equal(["can't be blank"], user.errors.messages[:designation])
+  test "default designation of user is Member " do
+    user = create(:user)
+    assert_equal "Member", user.designation
   end
   
   test "deafult age is 18" do
@@ -73,5 +72,11 @@ class UserTest < ActiveSupport::TestCase
     user = build(:user, email: user1.email, organisation_id: user1.organisation_id)
     assert_not user.valid?
     assert_equal(["has already been taken"], user.errors.messages[:email])
+  end
+
+  test "password must be present" do
+    user = build(:user, password: nil)
+    assert_not user.valid?
+    assert_equal(["can't be blank"], user.errors.messages[:password])
   end
 end
