@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
   #validations
   validates :first_name, presence: true
-  validates :email, presence: true, uniqueness: true
   validates :gender, inclusion: { in: %w(male female other) }
   validates :designation, presence: true
 end
