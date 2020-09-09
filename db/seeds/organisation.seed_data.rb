@@ -2,10 +2,13 @@
 
 class Organisation
   def self.seed
-    organisation = Organisation.new(
-      name:             "StackAvenue",
-      description:      "StackAvenue"
-    )
-    organisation.save!
+    org = ['StackAvenue', 'Google']
+    org.each do |org|
+      organisation = Organisation.new(
+        name:             org,
+        description:      org
+      )
+      organisation.save!
+    end
   end
 end
