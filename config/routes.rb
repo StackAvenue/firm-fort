@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'page/dashboard'
-  get 'pages/dashboard'
+  get 'home/dashboard'
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions',
+        registrations: "users/registrations"
       }
-  
-  root  'page#dashboard'
+  devise_scope :user do
+    get '/users/sign_out' => 'users/sessions#destroy'
+  end
+  root  'home#dashboard'
 end
