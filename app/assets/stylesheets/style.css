@@ -5,9 +5,22 @@ form{
 
 h2{
   text-align: center;
-  background-color: white;
 }
 
 body{
   background-color: rgb(219, 239, 240);
+}
+.btn-circle.btn-md { 
+  width: 50px; 
+  height: 50px; 
+  padding: 7px 10px; 
+  border-radius: 25px; 
+  font-size: 10px; 
+  text-align: center; 
+  font-size: 15px;
+} 
+
+.dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
 }
