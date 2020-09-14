@@ -5,6 +5,8 @@ ruby '2.5.3'
 
 gem 'devise'
 
+gem 'font-awesome-sass', '~> 5.13.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
