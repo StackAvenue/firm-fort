@@ -33,7 +33,7 @@
     <% @users.all.each do |user| %>
       <% if user.organisation_id == current_user.organisation_id %>
         <tr>
-          <td><%= user.first_name + " " + user.last_name %></td>
+          <td><%= full_name(user) %></td>
           <td><%= user.email %></td>
           <td><%= user.role.name %></td>
           <td><%= link_to sanitize('<i class="fas fa-pencil-alt" aria-hidden="true"></i>'), edit_user_path(user)  %></td>
