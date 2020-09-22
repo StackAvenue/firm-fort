@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
-  <div class="w3-sidebar w3-bar-block w3-white w3-navbar" style="width:5%">
-    <a class="w3-bar-item w3-button"><i class="fa fa-home fa-2x"></i></a>
-    <a class="w3-bar-item w3-button"><i class="fa fa-users fa-2x"></i></a>
-  </div>
+<div class="w3-sidebar w3-bar-block " style="width:6%">
+    <li><button class="btn btn-light btn-block"><%=link_to ('<i class="fas fa-2x fa-home"></i>').html_safe, root_path %></button></li>
+    <li><button class="btn btn-light btn-block"><%=link_to ('<i class="fas fa-2x fa-users"></i>').html_safe, users_path %></button></li>
+</div>
 <% end %>
 
