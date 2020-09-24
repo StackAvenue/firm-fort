@@ -16,3 +16,7 @@ class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
  
 end
+
+class ActionController::TestCase
+  include Devise::Test::ControllerHelpers
+end
