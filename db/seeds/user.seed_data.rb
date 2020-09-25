@@ -14,6 +14,7 @@ class User
       age:                21,
       gender:            "female",
       address:           "xyz",
+      password:          "123456",
       twitter_url:       "abc",
       linkedin_url:      "abc",
       github_url:        "abc",

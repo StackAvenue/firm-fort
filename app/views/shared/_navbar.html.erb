@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag 'style.css' %>
+
+<% if user_signed_in? %>
+  <nav class="navbar navbar-light bg-light">
+    <div class="d-inline">
+      <a class="navbar-brand"><%=current_user.organisation.name + " | " + current_user_full_name(@user) %></a>
+    </div>
+    <div class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <div class="dropdown">
+        <button style="margin-left: 0.2cm;" class="btn btn-primary btn-circle btn-md" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= first_and_last_name_initials(@user) %></button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" ><i class="fas fa-user-circle"></i><%= " " + current_user_full_name(@user) %></a>
+        <a class="dropdown-item"><i class="fas fa-envelope"></i><%=" " + current_user.email %></a>
+        <a class="dropdown-item"><i class="fas fa-user-shield"></i><%=" " + current_user.role.name %></a>
+        <a class="dropdown-item" <%= link_to destroy_user_session_path, method: :delete do %>
+          <span>
+            <i class="fas fa-sign-out-alt"></i>
+            Log Out
+          </span>
+        <% end %></a>
+      </div>
+    </div>
+    </div>
+  </nav>
+<% end %>

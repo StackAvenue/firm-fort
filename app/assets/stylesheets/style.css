@@ -1,0 +1,127 @@
+/*body */
+body{
+  background-color: rgb(219, 239, 240);
+}
+
+
+/*form*/
+form{
+  background-color: white;
+}
+
+form h2{
+  text-align: center;
+}
+
+form input[type=text], select {
+  width: 100%;
+  padding: 8px 15px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type=email], select {
+  width: 100%;
+  padding:  8px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type=password], select {
+  width: 100%;
+  padding:  8px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding:  8px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.form {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+div.align-right{
+  text-align: right;
+  padding: 20px;
+}
+
+div.forgot-password{
+  text-align: right;
+  padding: 0px;
+  padding-top: 0cm;
+  font-size: small;
+}
+
+
+/* navbar circular right most button */
+.btn-circle.btn-md { 
+  width: 50px; 
+  height: 50px; 
+  padding: 7px 10px; 
+  border-radius: 25px; 
+  font-size: 10px; 
+  text-align: center; 
+  font-size: 15px;
+} 
+
+.dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+}
+
+
+/* sidebar */
+.w3-sidebar{
+  list-style: none;
+  background: white;
+  padding: 10px;
+}
+
+.w3-sidebar li{
+  margin: 0 0 10px 0;
+}
+
+.w3-sidebar li button:focus{
+  background: red;
+}
+
+
+/* all members table */
+.user table {
+  margin-left: 5%;
+  border-collapse: collapse;
+  width: 95%; 
+}
+
+.user th, td {
+  margin-left: 2cm;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user .col-md-12 h4{
+  display: inline-block;
+  margin-left: 2cm;
+  text-align: left;
+}
+
+
