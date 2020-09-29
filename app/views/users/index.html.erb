@@ -13,7 +13,7 @@
             </button>
           </div>
         <div class="modal-body">
-          ...
+          hello
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -36,10 +36,11 @@
           <td><%= full_name(user) %></td>
           <td><%= user.email %></td>
           <td><%= user.role.name %></td>
-          <td><%= link_to sanitize('<i class="fas fa-pencil-alt" aria-hidden="true"></i>'), edit_user_path(user)  %></td>
-          <td><%= button_to user_path(user), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-            <% end %></td>                   
+          <td><%= link_to edit_user_path(user.id), remote: true  do %>
+          <span class="fas fa-pencil-alt" aria-hidden="true"></span>
+          <%end%></td>
+          <div id='edit_user'></div>
+          <td><%= link_to sanitize('<i class="fas fa-trash-alt" aria-hidden="true">'), user_path(user), method: :delete, data:{confirm: "Are you sure you want to delete user?" } %></td>                   
         </tr>
       <% end %>
     <% end %>
