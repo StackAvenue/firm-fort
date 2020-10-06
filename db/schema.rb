@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_055914) do
     t.string "first_name", null: false
     t.string "last_name"
     t.string "email", null: false
-    t.string "designation", default: "Member"
+    t.string "designation"
     t.integer "age", default: 18
     t.string "gender"
     t.text "address"
