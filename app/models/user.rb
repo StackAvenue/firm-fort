@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
   #validations
   validates :first_name, presence: true
-  validates :designation, presence: true
   validates :gender, inclusion: { in: %w(male female other) }, allow_blank: true
 end
 
