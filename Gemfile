@@ -5,6 +5,8 @@ ruby '2.5.3'
 
 gem 'devise'
 
+gem 'devise_invitable', '~> 2.0.0'
+
 gem 'font-awesome-sass', '~> 5.13.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

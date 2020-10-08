@@ -84,6 +84,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.2)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     erubi (1.9.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -228,6 +231,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  devise_invitable (~> 2.0.0)
   factory_bot_rails
   faker
   font-awesome-sass (~> 5.13.0)
