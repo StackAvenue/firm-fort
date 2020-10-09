@@ -15,7 +15,7 @@
         <%= f.label field %><br />
         <%= f.text_field field %>
         <b><%= f.label :role %></b>
-        <%= f.select :gender, ["SuperAdmin","Admin","Member"] , {prompt:'None'} %>
+        <%= f.select :role, ["Member","SuperAdmin","Admin"]  %>
       </div>
     <% end -%>
     <div class="actions">
