@@ -9,19 +9,17 @@
     </div>
     <div class="modal-body">
     <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
-      <% resource.class.invite_key_fields.each do |field| -%>
-        <div class="field">
-          <b><%= f.label field %></b><br />
-          <%= f.text_field field %><br/>
-          <b><%= Role %></b><br />
-          <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'None'} %>
-        </div>
-      <% end -%>
-      <div class="modal-footer">
+      <div class="form">
+        <%= render "users/shared/error_messages", resource: resource %>
+          <%= f.text_field :first_name, placeholder: "First Name"  %>
+          <%= f.text_field :last_name, placeholder: "Last Name"  %>
+          <%= f.email_field :email,placeholder: "Email" %><br/>
+          <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'Role'} %>
+        <div class="modal-footer">
         <%= f.submit "send" %>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
       <% end %> 
+      </div>
     </div> 
     </div>
   </div>
