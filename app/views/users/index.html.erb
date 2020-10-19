@@ -2,6 +2,7 @@
 <div class="user">
   <div class="col-md-12">
     <h4>Members</h4>
+    <a style="float: right; margin-left:10px; margin-top:10px;" class="btn btn-info" <%= link_to 'Pending Invitation', users_invitation_pending_path %></a>
     <a style="float: right; margin-top:10px;" class="btn btn-info" <%= link_to 'Add Member', new_user_invitation_path, remote: true %></a>
     <div id='new_user_invitation'></div>
   </div>
@@ -10,15 +11,17 @@
       <th>Name</th>
       <th>Email</th>
       <th>Role</th>
+      <th>Status</th>
       <th></th>
       <th></th>
     </tr>
     <% @users.all.each do |user| %>
-      <% if user.organisation_id == current_user.organisation_id %>
+      <% if user.organisation_id == current_user.organisation_id && (user.invitation_status == "Accepted" || user.invitation_status == nil) %>
         <tr>
           <td><%= full_name(user) %></td>
           <td><%= user.email %></td>
           <td><%= user.role.name %></td>
+          <td><%= user.invitation_status %></td>
           <td><%= link_to edit_user_path(user.id), remote: true  do %>
           <span class="fas fa-pencil-alt" aria-hidden="true"></span>
           <%end%></td>
@@ -26,6 +29,6 @@
           <td><%= link_to sanitize('<i class="fas fa-trash-alt" aria-hidden="true">'), user_path(user), method: :delete, data:{confirm: "Are you sure you want to delete user?" } %></td>                   
         </tr>
       <% end %>
-    <% end %>
+      <% end %>
   </table>
 </div>
