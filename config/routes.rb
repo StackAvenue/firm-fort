@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       }
   devise_scope :user do
     get '/users/sign_out' => 'users/sessions#destroy'
+    get '/users/invitation/pending' => 'users/invitations#pending'
   end
 
   resources :users
