@@ -8,6 +8,8 @@
     <%= f.hidden_field :invitation_token %>
     <%= f.text_field :first_name %>
     <%= f.text_field :last_name %>
+    <%= f.email_field :email, readonly: true %><br/>
+    <%= f.hidden_field :invitation_status, value: "Accepted" %>
     <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password"  %>
     <%= f.password_field :password_confirmation,placeholder: "Password Confirmation", autocomplete: "new-password" %>
     <%= f.submit "Create Account" %>
