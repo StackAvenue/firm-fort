@@ -2,9 +2,8 @@ class Users::InvitationsController < Devise::InvitationsController
   
   def create
     @user = User.new(user_params)
-    @user.first_name = "First Name"
-    @user.last_name = "last Name"
     @user.organisation_id = current_user.organisation_id
+    @user.invitation_status = "Pending"
     if @user.invite!
       redirect_to users_path
     else 
@@ -12,8 +11,12 @@ class Users::InvitationsController < Devise::InvitationsController
     end
   end
 
+  def pending
+    @user = User.where(invitation_status: "Pending")
+  end
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :role_id, :organisation_id, :email)
   end 
-  end
+end
