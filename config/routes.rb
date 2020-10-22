@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'users/sessions#destroy'
     get '/users/invitation/pending' => 'users/invitations#pending'
+    get '/user/invitation/resend/:id' => 'users/invitations#resend', as: 'user_invitation_resend'
   end
 
   resources :users
