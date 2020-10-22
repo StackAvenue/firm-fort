@@ -15,8 +15,14 @@ class Users::InvitationsController < Devise::InvitationsController
     @user = User.where(invitation_status: "Pending")
   end
 
+  def resend
+    @user = User.find(params[:id])
+    @user.invite!
+    redirect_to users_invitation_pending_path
+  end
+
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :role_id, :organisation_id, :email)
+    params.require(:user).permit(:first_name, :last_name, :role_id, :organisation_id, :email, :id)
   end 
 end
