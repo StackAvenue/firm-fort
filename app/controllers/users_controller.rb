@@ -7,9 +7,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    respond_to do |format|
-      format.js
-    end
   end
 
   def update
@@ -17,6 +14,8 @@ class UsersController < ApplicationController
   
     if @user.update(user_params)
       redirect_to users_path
+    else
+      render "edit"
     end
   end
   
