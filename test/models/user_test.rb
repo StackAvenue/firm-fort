@@ -33,9 +33,9 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(["can't be blank"], user.errors.messages[:email]) 
   end
 
-  test "default designation of user is Member " do
+  test "default designation of user is nil " do
     user = create(:user)
-    assert_equal "Member", user.designation
+    assert_nil user.designation
   end
   
   test "deafult age is 18" do
