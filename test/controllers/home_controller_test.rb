@@ -2,7 +2,6 @@ require 'test_helper'
 
 class HomeControllerTest < ActionController::TestCase
   def setup
-    super
     @user = create :user
   end
 
