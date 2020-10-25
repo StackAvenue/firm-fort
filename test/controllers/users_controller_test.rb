@@ -36,7 +36,7 @@ class UsersControllerTest < ActionController::TestCase
   test 'if user found should edit user' do
     sign_in @user
     user = create(:user)
-    get :edit, params: {id: user.id} 
+    get :edit,  xhr: true, params: {id: user.id} 
     assert_response :success  
   end
 
@@ -46,6 +46,5 @@ class UsersControllerTest < ActionController::TestCase
       get :edit, params: {id: -1}
     end
   end
-
 
 end
