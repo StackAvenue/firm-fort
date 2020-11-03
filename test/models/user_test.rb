@@ -79,4 +79,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
     assert_equal(["can't be blank"], user.errors.messages[:password])
   end
+
+  test "same user can be present in differnt organisations" do
+    user1 = create(:user)
+    user2 = build(:user, email: user1.email)
+    assert true, user2.save
+  end
 end
