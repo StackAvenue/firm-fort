@@ -8,13 +8,21 @@
       </button>
     </div>
     <div class="modal-body">
-    <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: invitation_path(resource_name),remote: true, html: { method: :post }) do |f| %>
+      <div id='user_invitation'></div>
       <div class="form">
-        <%= render "users/shared/error_messages", resource: resource %>
-          <%= f.text_field :first_name, placeholder: "First Name"  %>
-          <%= f.text_field :last_name, placeholder: "Last Name"  %>
-          <%= f.email_field :email,placeholder: "Email" %><br/>
-          <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'Role'} %>
+       <div class="notice" ><%= @notice %></div>
+       <div class="error" ><%= resource.errors[:first_name][0] %></div>
+        <%= f.text_field :first_name, placeholder: "First Name"  %>
+        
+        <%= f.text_field :last_name, placeholder: "Last Name"  %>
+
+        <div class="error" ><%= resource.errors[:email][0] %></div>
+        <%= f.email_field :email,placeholder: "Email" %><br/>
+
+        <div class="error" ><%= resource.errors[:role][0] %></div>     
+        <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'Role'} %>
+
         <div class="modal-footer">
         <%= f.submit "send" %>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
