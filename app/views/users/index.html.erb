@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag 'style.css' %>
 <div class="user">
   <div class="col-md-12">
+  <%= render '/users/shared/tabs' %>
     <h4>Members</h4>
-    <a style="float: right; margin-left:10px; margin-top:10px;" class="btn btn-info" <%= link_to 'Pending Invitation', users_invitation_pending_path %></a>
     <a style="float: right; margin-top:10px;" class="btn btn-info" <%= link_to 'Add Member', new_user_invitation_path, remote: true %></a>
     <div id='new_user_invitation'></div>
   </div>
