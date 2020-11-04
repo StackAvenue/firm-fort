@@ -145,3 +145,10 @@ div.forgot-password{
   cursor: pointer;
 }
 
+div.notice {
+  color: seagreen;
+}
+
+div.error{
+  color: red;
+}
