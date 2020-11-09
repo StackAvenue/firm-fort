@@ -152,3 +152,8 @@ div.notice {
 div.error{
   color: red;
 }
+
+.pagination{
+  padding-top: 10px;
+  justify-content: center;
+}
