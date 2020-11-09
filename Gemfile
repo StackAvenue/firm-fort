@@ -10,6 +10,8 @@ gem 'devise_invitable', '~> 2.0.0'
 
 gem 'font-awesome-sass', '~> 5.13.0'
 
+gem 'pagy', '~> 3.9.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
