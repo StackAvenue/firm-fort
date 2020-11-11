@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def search
+    @pagy, @users = pagy(User.where("first_name Like ? OR last_name Like ?", params[:name].titlecase, params[:name].titlecase))
+  end
+
   private
   
   def user_params
