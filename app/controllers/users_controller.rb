@@ -27,12 +27,14 @@ class UsersController < ApplicationController
   end
 
   def search
-    @pagy, @users = pagy(User.where("first_name Like ? OR last_name Like ?", params[:name].titlecase, params[:name].titlecase))
+    parameter = params[:name].titlecase
+    @pagy, @users = pagy(User.where("first_name Like ? OR last_name Like ?", parameter, parameter))
   end
 
   private
   
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :gender, :age, :role_id, :organisation_id, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :gender, :age, :role_id, :organisation_id, 
+                                :email, :password, :password_confirmation)
   end
 end
