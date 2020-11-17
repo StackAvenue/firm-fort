@@ -45,5 +45,4 @@ class UsersControllerTest < ActionController::TestCase
       get :edit, params: {id: -1}
     end
   end
-
 end
