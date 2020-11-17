@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
    
-    redirect_to users_invitation_pending_path
+    redirect_back fallback_location: '/'
   end
 
   def search
