@@ -1,33 +1,13 @@
 <%= stylesheet_link_tag 'style.css' %>
+
 <div class="user">
   <div class="col-md-12">
     <%= render '/users/shared/tabs' %>
     <h4>Pending Invitations</h4>
+    <div class="notice" style="margin-left: 2cm;" >
+      <%= notice %>
+    </div>
   </div>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-    </tr>
-    <% @user.all.each do |user| %>
-      <% if user.organisation_id == current_user.organisation_id %>
-        <tr>
-          <td><%= full_name(user) %></td>
-          <td><%= user.email %></td>
-          <td><%= user.role.name %></td>
-          <td><%= user.invitation_status %></td>
-          <td><a class="btn btn-info"<%= link_to 'Resend', user_invitation_resend_path(user.id) %></a></td>
-          <td><%= link_to sanitize('<i class="fas fa-trash-alt" aria-hidden="true">'), user_path(user), method: :delete, data:{confirm: "Are you sure you want to delete user?" } %></td>                   
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
-</div>
-
-<div class="pagination">
-  <%== pagy_bootstrap_nav(@pagy) %>
+  <%= render '/users/shared/pending_users_list' %>
+  <%= render '/users/shared/pagination' %>
 </div>
