@@ -4,7 +4,7 @@
     <h4>Search Results</h4>
   </div>
   <% if @users.any? %>
-    <%= render '/users/shared/search_users_list' %>
+    <%= render '/users/search_users_list' %>
     <%= render '/users/shared/pagination' %>
   <% else %>
     <div class="alert alert-warning" role="alert">
