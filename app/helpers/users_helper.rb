@@ -12,7 +12,7 @@ module UsersHelper
     "#{user.first_name + " " + user.last_name}"
   end
   
-  def all_users_in_organisation(user)
+  def user_in_organisation(user)
     user.organisation_id == current_user.organisation_id && 
                 (user.invitation_status == "Accepted" || user.invitation_status == nil)
   end
