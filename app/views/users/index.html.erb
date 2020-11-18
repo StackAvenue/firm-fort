@@ -8,6 +8,16 @@
     </a>
     <div id='new_user_invitation'></div>
   </div>
-  <%= render '/users/all_users_list' %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <%= render partial: "user", collection: @users %>
+  <table>
   <%= render '/users/shared/pagination' %>
 </div>
