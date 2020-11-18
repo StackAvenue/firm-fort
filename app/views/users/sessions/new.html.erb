@@ -6,10 +6,14 @@
     <h2>Log in</h2><br/>
 
     <div class="form">
-      <div class="error" ><%= resource.errors[:email][0] %></div>
+      <div class="error" >
+        <%= resource.errors.full_messages_for(:email).first %>
+      </div>
       <%= f.email_field :email,placeholder: "Email", autofocus: true, autocomplete: "email" %>
     
-      <div class="error" ><%= resource.errors[:password][0] %></div>
+      <div class="error" >
+        <%= resource.errors.full_messages_for(:password).first %>
+      </div>
       <%= f.password_field :password,placeholder: "Password", autocomplete: "current-password" %>
 
       <div class="forgot-password">

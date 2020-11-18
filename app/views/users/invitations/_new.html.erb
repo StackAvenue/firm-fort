@@ -17,15 +17,21 @@
               <%= @notice %>
             </div>
             
-            <div class="error" ><%= resource.errors[:first_name][0] %></div>
+            <div class="error" >
+              <%= resource.errors.full_messages_for(:first_name).first %>
+            </div>
             <%= f.text_field :first_name, placeholder: "First Name"  %>
             
             <%= f.text_field :last_name, placeholder: "Last Name"  %>
 
-            <div class="error" ><%= resource.errors[:email][0] %></div>
+            <div class="error" >
+              <%= resource.errors.full_messages_for(:email).first %>
+            </div>
             <%= f.email_field :email,placeholder: "Email" %><br/>
 
-            <div class="error" ><%= resource.errors[:role][0] %></div>     
+            <div class="error" >
+              <%= resource.errors.full_messages_for(:role).first %>
+            </div>     
             <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'Role'} %>
 
             <%= f.hidden_field :organisation_id, value: current_user.organisation_id %>
