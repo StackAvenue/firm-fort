@@ -1,5 +1,4 @@
 <%= stylesheet_link_tag 'style.css' %>
-
 <div class="user">
   <div class="col-md-12">
     <%= render '/users/shared/tabs' %>
@@ -8,6 +7,16 @@
       <%= notice %>
     </div>
   </div>
-  <%= render '/users/invitations/pending_users_list' %>
+  <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render partial: "pending_user", collection: @pending_users %>
+    <table>
   <%= render '/users/shared/pagination' %>
 </div>
