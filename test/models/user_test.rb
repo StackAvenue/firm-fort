@@ -30,12 +30,12 @@ class UserTest < ActiveSupport::TestCase
   test "email must be present" do
     user = build(:user, email: nil)
     assert_not user.valid?
-    assert_equal(["can't be blank"], user.errors.messages[:email]) 
+    assert_equal(["can't be blank", "can't be blank"], user.errors.messages[:email]) 
   end
 
-  test "default designation of user is Member " do
+  test "default designation of user is nil " do
     user = create(:user)
-    assert_equal "Member", user.designation
+    assert_nil user.designation
   end
   
   test "deafult age is 18" do
@@ -52,13 +52,13 @@ class UserTest < ActiveSupport::TestCase
   test "organisation must be present" do
     user = build(:user, organisation: nil)
     assert_not user.valid?
-    assert_equal(["must exist"], user.errors.messages[:organisation])
+    assert_equal(["must exist", "can't be blank"], user.errors.messages[:organisation])
   end 
   
   test "role must be present" do
     user = build(:user, role: nil)
     assert_not user.valid?
-    assert_equal(["must exist"], user.errors.messages[:role])
+    assert_equal(["must exist", "can't be blank"], user.errors.messages[:role])
   end  
 
   test "save user successfully" do 
@@ -78,5 +78,11 @@ class UserTest < ActiveSupport::TestCase
     user = build(:user, password: nil)
     assert_not user.valid?
     assert_equal(["can't be blank"], user.errors.messages[:password])
+  end
+
+  test "same user can be present in differnt organisations" do
+    user1 = create(:user)
+    user2 = build(:user, email: user1.email)
+    assert true, user2.save
   end
 end

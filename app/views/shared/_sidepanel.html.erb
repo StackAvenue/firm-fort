@@ -1,7 +1,15 @@
 <% if user_signed_in? %>
-<div class="w3-sidebar w3-bar-block " style="width:6%">
-    <li><button class="btn btn-light btn-block"><%=link_to sanitize('<i class="fas fa-2x fa-home"></i>'), root_path %></button></li>
-    <li><button class="btn btn-light btn-block"><%=link_to sanitize('<i class="fas fa-2x fa-users"></i>'), users_path %></button></li>
-</div>
+  <div class="w3-sidebar w3-bar-block " style="width:6%">
+    <li>
+      <button class="btn btn-light btn-block">
+        <%=link_to sanitize('<i class="fas fa-2x fa-home"></i>'), root_path %>
+      </button>
+    </li>
+    <li>
+      <button class="btn btn-light btn-block">
+        <%=link_to sanitize('<i class="fas fa-2x fa-users"></i>'), users_path %>
+      </button>
+    </li>
+  </div>
 <% end %>
 

@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag 'style.css' %>
+<div class="user">
+  <div class="col-md-12">
+    <%= render '/users/shared/tabs' %>
+    <h4>Pending Invitations</h4>
+    <div class="notice" style="margin-left: 2cm;" >
+      <%= notice %>
+    </div>
+  </div>
+  <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render partial: "pending_user", collection: @pending_users %>
+    <table>
+  <%= render '/users/shared/pagination' %>
+</div>

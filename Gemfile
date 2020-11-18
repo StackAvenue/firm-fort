@@ -4,8 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'devise'
+gem "letter_opener", :group => :development
+
+gem 'devise_invitable', '~> 2.0.0'
 
 gem 'font-awesome-sass', '~> 5.13.0'
+
+gem 'pagy', '~> 3.9.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
