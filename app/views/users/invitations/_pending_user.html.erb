@@ -1,0 +1,16 @@
+<% if pending_user.organisation_id == current_user.organisation_id %>
+  <tr>
+    <td><%= full_name(pending_user) %></td>
+    <td><%= pending_user.email %></td>
+    <td><%= pending_user.role.name %></td>
+    <td><%= pending_user.invitation_status %></td>
+    <td><a class="btn btn-info"
+      <%= link_to 'Resend', user_invitation_resend_path(pending_user.id) %></a>
+    </td>
+    <td><%= link_to sanitize('<i class="fas fa-trash-alt" aria-hidden="true">'), user_path(pending_user), 
+              method: :delete, data:{confirm: "Are you sure you want to delete user?" } %>
+    </td>                   
+  </tr>
+<% end %>
+
+
