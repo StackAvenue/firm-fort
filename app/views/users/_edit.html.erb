@@ -20,7 +20,7 @@
             <%= f.text_field :last_name, placeholder: "Last Name", autofocus: true %>
             
             <b><%= f.label :gender %></b>
-            <%= f.select :gender, ["male","female","other"] , {prompt:'None'} %>
+            <%= f.select :gender, ["male","female","other"] , {prompt:'None'}, {class: "form-select"} %>
 
             <b><%= f.label :age %></b>
             <%= f.number_field :age, placeholder: "Age", autofocus: true %><br />
