@@ -11,11 +11,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-  
-    if @user.update(user_params)
-      redirect_to users_path
-    else
-      render "edit"
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to users_path }
+      else
+        format.js { render "edit" }
+      end
     end
   end
   
