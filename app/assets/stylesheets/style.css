@@ -117,7 +117,7 @@ div.forgot-password{
 }
 
 
-/* all members table */
+/* tables */
 .user table {
   margin-left: 7%;
   border-collapse: collapse;
@@ -137,17 +137,6 @@ div.forgot-password{
   text-align: left;
 }
 
-.modal-body form input[type=submit]{
-  width: 17%;
-  background-color: #4CAF50;
-  color: white;
-  padding:  8px 15px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 div.notice {
   color: seagreen;
 }
@@ -165,4 +154,21 @@ div.error{
   margin-top: 4cm;
   margin-left: 15cm;
   margin-right: 13cm;
+}
+
+/* modal */
+.modal-footer{
+  padding: 2px 16px;
+}
+
+.modal-body form input[type=submit]{
+  width: 17%;
+  background-color: #4CAF50;
+  color: white;
+  padding:  8px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 9.5mm;
 }
