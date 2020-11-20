@@ -8,9 +8,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for @user do |f|  %>
+        <%= form_for @user, remote: true do |f|  %>
           <div class="form">
             <b><%= f.label :first_name %></b>
+            <div class="error" >
+              <%= @user.errors.full_messages_for(:first_name).first %>
+            </div>
             <%= f.text_field :first_name, placeholder: "First Name", autofocus: true%>
 
             <b><%= f.label :last_name %></b>
