@@ -17,6 +17,14 @@ class Users::InvitationsController < Devise::InvitationsController
     redirect_to users_invitation_pending_path, notice: "Invitation Sent" 
   end
 
+  def search
+    parameter = params[:name].titlecase
+    search_pending_user = User.where("(invitation_status = 'Pending') AND 
+            ((first_name Like ? OR last_name Like ?) OR CONCAT_WS(' ', first_name, last_name) LIKE ?)",
+            parameter, parameter, parameter)
+    @pagy, @pending_users = pagy(search_pending_user)
+  end
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :role_id, :organisation_id, :email, 
