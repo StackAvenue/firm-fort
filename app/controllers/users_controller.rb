@@ -28,7 +28,10 @@ class UsersController < ApplicationController
 
   def search
     parameter = params[:name].titlecase
-    @pagy, @users = pagy(User.where("first_name Like ? OR last_name Like ?", parameter, parameter))
+    search_user = User.where("(invitation_status = 'Accepted' OR invitation_status IS NULL ) AND 
+        ((first_name Like ?  OR last_name Like ?  ) OR CONCAT_WS(' ', first_name, last_name) LIKE ?)", 
+        parameter, parameter, parameter)
+    @pagy, @users = pagy(search_user)
   end
 
   private
