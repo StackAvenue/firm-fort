@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path }
+        format.html { redirect_to users_path, notice: "Updated Successfully" }
       else
         format.js { render "edit" }
       end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
    
-    redirect_back fallback_location: '/'
+    redirect_back fallback_location: '/', notice: "Deleted Successfully"
   end
 
   def search
