@@ -20,7 +20,7 @@
       <div class="error" >
         <%= resource.errors.full_messages_for(:organisation).first %>
       </div>
-      <%= f.select :organisation_id, Organisation.all.pluck(:name,:id),{prompt:'Organisation'}, 
+      <%= f.select :organisation_id, Organisation.pluck(:name,:id),{prompt:'Organisation'}, 
                     {class: "form-select"} %><br/>
     
       <div class="error" >

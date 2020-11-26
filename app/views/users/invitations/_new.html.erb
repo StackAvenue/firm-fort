@@ -32,7 +32,7 @@
             <div class="error" >
               <%= resource.errors.full_messages_for(:role).first %>
             </div>     
-            <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'Role'} , {class: "form-select"} %>
+            <%= f.select :role_id, Role.pluck(:name,:id),{prompt:'Role'} , {class: "form-select"} %>
 
             <%= f.hidden_field :organisation_id, value: current_user.organisation_id %>
 
