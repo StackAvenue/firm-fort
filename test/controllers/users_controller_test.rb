@@ -22,7 +22,6 @@ class UsersControllerTest < ActionController::TestCase
     assert_difference 'User.count', -1 do
       delete :destroy, params: {id: @user.id}
     end
-    assert_redirected_to users_path
   end
 
   test 'if user is not found should raise RecordNotFound for deleting' do
