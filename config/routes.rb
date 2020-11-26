@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy'
     get '/users/invitation/pending' => 'users/invitations#pending'
     get '/user/invitation/resend/:id' => 'users/invitations#resend', as: 'user_invitation_resend'
-    get '/search' => 'users#search'
+    get 'users/search' => 'users#search'
+    get '/users/invitation/pending/search' => "users/invitations#search"
   end
 
   resources :users

@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newUserlTitle">Send Invitation</h5>
+        <h5 class="modal-title" id="newUserlTitle">Invite User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -32,18 +32,17 @@
             <div class="error" >
               <%= resource.errors.full_messages_for(:role).first %>
             </div>     
-            <%= f.select :role_id, Role.all.pluck(:name,:id),{prompt:'Role'} %>
+            <%= f.select :role_id, Role.pluck(:name,:id),{prompt:'Role'} , {class: "form-select"} %>
 
             <%= f.hidden_field :organisation_id, value: current_user.organisation_id %>
 
             <%= f.hidden_field :invitation_status, value: "Pending" %>
             
             <%= f.hidden_field :password, value: "password" %>
-
-            <div class="modal-footer">
-              <%= f.submit "send" %>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
-            </div>
+          </div> 
+          <div class="modal-footer">
+            <%= f.submit "Invite" %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>   
           </div> 
         <% end %> 
       </div>

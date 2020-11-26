@@ -1,4 +1,4 @@
-<% if search_user.organisation_id == current_user.organisation_id %>
+<% if user_in_organisation(search_user) %>
   <tr>
     <td><%= full_name(search_user) %></td>
     <td><%= search_user.email %></td>

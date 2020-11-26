@@ -11,11 +11,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-  
-    if @user.update(user_params)
-      redirect_to users_path
-    else
-      render "edit"
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to users_path, notice: "Updated Successfully" }
+      else
+        format.js { render "edit" }
+      end
     end
   end
   
@@ -23,12 +24,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
    
-    redirect_back fallback_location: '/'
+    redirect_back fallback_location: '/', notice: "Deleted Successfully"
   end
 
   def search
     parameter = params[:name].titlecase
-    @pagy, @users = pagy(User.where("first_name Like ? OR last_name Like ?", parameter, parameter))
+    search_user = User.where("(invitation_status = 'Accepted' OR invitation_status IS NULL ) AND 
+        ((first_name Like ?  OR last_name Like ?  ) OR CONCAT_WS(' ', first_name, last_name) LIKE ?)", 
+        parameter, parameter, parameter)
+    @pagy, @users = pagy(search_user)
   end
 
   private

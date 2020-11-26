@@ -3,10 +3,17 @@
   <div class="col-md-12">
     <%= render '/users/shared/tabs' %>
     <h4>Members</h4>
-    <a style="float: right; margin-top:10px;" class="btn btn-info" 
+    <a style="float: right;" class="btn btn-info" 
       <%= link_to 'Add Member', new_user_invitation_path, remote: true %>
     </a>
+    <form class="search" action="users/search" style="float: right; margin-right:0.5cm;">
+      <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" 
+        aria-label="Search" >
+    </form>
     <div id='new_user_invitation'></div>
+    <div class="notice" style="margin-left: 2cm;">
+      <%= notice %>
+    </div>
   </div>
   <table>
     <tr>

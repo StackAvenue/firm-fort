@@ -1,0 +1,18 @@
+<% if pending_user_in_organisation(search_pending_user)%>
+  <tr>
+    <td><%= full_name(search_pending_user) %></td>
+    <td><%= search_pending_user.email %></td>
+    <td><%= search_pending_user.role.name %></td> 
+    <td><%= search_pending_user.invitation_status %></td>
+    <td><%= link_to edit_user_path(search_pending_user.id), remote: true  do %>
+      <span class="fas fa-pencil-alt" aria-hidden="true"></span>
+        <% end %>
+    </td>
+    <div id='edit_user'></div>
+    <td><%= link_to sanitize('<i class="fas fa-trash-alt" aria-hidden="true">'), user_path(search_pending_user), 
+              method: :delete, data:{confirm: "Are you sure you want to delete user?" } %>
+    </td>                   
+  </tr>
+<% end %>
+
+
