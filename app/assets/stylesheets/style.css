@@ -100,20 +100,24 @@ div.forgot-password{
   left: auto !important;
 }
 
+.navbar{
+  margin-left: 6%;
+}
 
 /* sidebar */
 .w3-sidebar{
   list-style: none;
   background: white;
+  width: 6%;
+}
+
+.w3-sidebar ul{
+  margin-top: 2cm;
+  padding: 0;
+}
+
+.w3-sidebar ul li{
   padding: 10px;
-}
-
-.w3-sidebar li{
-  margin: 0 0 10px 0;
-}
-
-.w3-sidebar li button:focus{
-  background: red;
 }
 
 
