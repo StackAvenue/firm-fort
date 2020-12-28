@@ -34,6 +34,9 @@ class UsersController < ApplicationController
         parameter, parameter, parameter)
     @pagy, @users = pagy(search_user)
   end
+  
+  def profile
+  end
 
   private
   
