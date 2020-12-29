@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get '/user/invitation/resend/:id', to: 'users/invitations#resend', as: 'user_invitation_resend'
     get 'users/search', to: 'users#search'
     get '/users/invitation/pending/search', to: "users/invitations#search"
-    get '/users/profile', to: 'users#profile'
+    get '/users/profile/:id', to: 'users#profile', as: 'users_profile'
   end
 
   resources :users
