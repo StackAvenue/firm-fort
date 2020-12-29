@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: "Updated Successfully" }
+        format.html { redirect_to request.referrer, notice: "Updated Successfully" }
       else
         format.js { render "edit" }
       end
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   end
   
   def profile
+    @user = User.find(params[:id])
   end
 
   private
