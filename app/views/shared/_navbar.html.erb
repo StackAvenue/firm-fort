@@ -14,7 +14,7 @@
           <%= first_and_last_name_initials(@user) %>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" <%= link_to users_profile_path do %>
+          <a class="dropdown-item" <%= link_to users_profile_path(current_user.id) do %>
               <span>
                 <i class= "fas fa-user-circle"></i>
                 <%= current_user_full_name(@user)%>
