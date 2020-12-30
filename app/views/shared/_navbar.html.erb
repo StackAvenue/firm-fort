@@ -15,10 +15,10 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" <%= link_to users_profile_path(current_user.id) do %>
-              <span>
-                <i class= "fas fa-user-circle"></i>
-                <%= current_user_full_name(@user)%>
-              </span>
+            <span>
+              <i class= "fas fa-user-circle"></i>
+              <%= current_user_full_name(@user)%>
+            </span>
             <%end%>
           </a>
           <a class="dropdown-item">
