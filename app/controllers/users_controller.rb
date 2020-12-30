@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: "Updated Successfully" }
+        format.html { redirect_to request.referrer, notice: "Updated Successfully" }
       else
         format.js { render "edit" }
       end
@@ -33,6 +33,10 @@ class UsersController < ApplicationController
         ((first_name Like ?  OR last_name Like ?  ) OR CONCAT_WS(' ', first_name, last_name) LIKE ?)", 
         parameter, parameter, parameter)
     @pagy, @users = pagy(search_user)
+  end
+  
+  def profile
+    @user = User.find(params[:id])
   end
 
   private

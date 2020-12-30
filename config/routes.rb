@@ -6,11 +6,12 @@ Rails.application.routes.draw do
         invitations: "users/invitations"
       }
   devise_scope :user do
-    get '/users/sign_out' => 'users/sessions#destroy'
-    get '/users/invitation/pending' => 'users/invitations#pending'
-    get '/user/invitation/resend/:id' => 'users/invitations#resend', as: 'user_invitation_resend'
-    get 'users/search' => 'users#search'
-    get '/users/invitation/pending/search' => "users/invitations#search"
+    get '/users/sign_out', to: 'users/sessions#destroy'
+    get '/users/invitation/pending', to: 'users/invitations#pending'
+    get '/user/invitation/resend/:id', to: 'users/invitations#resend', as: 'user_invitation_resend'
+    get 'users/search', to: 'users#search'
+    get '/users/invitation/pending/search', to: "users/invitations#search"
+    get '/users/profile/:id', to: 'users#profile', as: 'users_profile'
   end
 
   resources :users
