@@ -18,15 +18,11 @@
                       <%else%>
                         <img src="https://img.icons8.com/bubbles/100/000000/user.png">
                       <%end%> 
-                      <%= f.file_field :image %>  
+                      <%= f.file_field :image, class: "active-storage-button" %>  
                       <%= f.submit "Upload", style:"width:80px;" %>                   
                     </div>
                   <%end%>
                 </div>
-                <h6 class="f-w-600">Email</h6>
-                <h6 class="f-w-600 text-white"><%= current_user.email %></h6>
-                <p class="f-w-600">Designation</p>
-                <h6 class="f-w-600 text-white"><%= current_user.role.name %></h6> 
               </div>
             </div>
             <div class="col-sm-8">
@@ -34,6 +30,14 @@
                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
                 <%= form_for @user  do |f|  %>
                   <div class="row">
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Email</p>
+                      <h6 class="f-w-400"><%= current_user.email %></h6>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Designation</p>
+                      <h6 class=" f-w-400"><%= current_user.role.name %></h6> 
+                    </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">First Name</p>
                       <h6 class="text-muted f-w-400"><%= f.text_field :first_name %></h6> 
