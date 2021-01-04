@@ -308,3 +308,12 @@ h6 {
 .image{
   background-color: none;
 }
+
+.active-storage-button{
+  display: block;
+  width: 10px;
+  margin-left: 10px;
+  margin-right: 100cm;
+  padding-top: 10px;
+}
+
