@@ -2,11 +2,11 @@
 <div class="user">
   <div class="col-md-12">
     <%= render '/users/shared/tabs' %>
-    <h4>Members</h4>
+    <h4>Members</h4><br/>
     <a style="float: right;" class="btn btn-info" 
       <%= link_to 'Add Member', new_user_invitation_path, remote: true %>
     </a>
-    <form class="search" action="users/search" style="float: right; margin-right:0.5cm;">
+    <form class="search" action="users/search">
       <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" 
         aria-label="Search" >
     </form>
