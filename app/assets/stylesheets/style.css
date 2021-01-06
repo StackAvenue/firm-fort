@@ -126,9 +126,9 @@ div.forgot-password{
 /* tables */
 .user table {
   margin-top: 2%;
-  margin-left: 10%;
+  margin-left: 2cm;
   border-collapse: collapse;
-  width: 80%; 
+  width: 90%; 
 }
 
 .user th, td {
