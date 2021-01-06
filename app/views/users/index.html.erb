@@ -14,16 +14,16 @@
     <div class="notice" style="margin-left: 2cm;">
       <%= notice %>
     </div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render partial: "user", collection: @users %>
+    <table>
+    <%= render '/users/shared/pagination' %>
   </div>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th></th>
-      <th></th>
-    </tr>
-    <%= render partial: "user", collection: @users %>
-  <table>
-  <%= render '/users/shared/pagination' %>
 </div>
