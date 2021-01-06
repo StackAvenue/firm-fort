@@ -1,15 +1,12 @@
 <%= stylesheet_link_tag 'style.css' %><br/>
 
-<body style="padding-left: 13cm;padding-right: 13cm;padding-top: 0.5cm">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %><br/>
+<div class="form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <h2>Sign up</h2>
-    
-    <div class="form">
       <div class="error" >
         <%= resource.errors.full_messages_for(:first_name).first  %>
       </div>
       <%= f.text_field :first_name,placeholder: "First Name", autofocus: true%>
-
       <%= f.text_field :last_name,placeholder: "Last Name", autofocus: true %>
 
       <div class="error" >
@@ -33,11 +30,9 @@
       </div>
       <%= f.password_field :password_confirmation,placeholder: "Password Confirmation",
             autocomplete: "new-password" %>
-
       <%= f.submit "Sign up" %>
-    </div>
     <div class="align-right">
       Already have an Account? <%= link_to "Log in", new_session_path(resource_name) %>
     </div>
   <% end %>
-</body>
+</div>
