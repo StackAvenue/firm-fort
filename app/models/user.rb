@@ -27,7 +27,7 @@ class User < ApplicationRecord
   #associations
   belongs_to :organisation
   belongs_to :role
-  has_one_attached:image
+  has_one_attached :image
 
   #validations
   validates :first_name, presence: true
