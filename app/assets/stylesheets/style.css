@@ -14,6 +14,7 @@ body{
 
 form h2{
   text-align: center;
+  margin-top: 0;
 }
 
 form input[type=text], select {
@@ -69,16 +70,11 @@ form input[type=submit] {
   cursor: pointer;
 }
 
-div.form {
-  border-radius: 5px;
-  padding: 20px;
-}
-
 div.align-right{
   text-align: right;
-  padding: 20px;
+  padding: 0px;
+  padding-top: 0cm;
 }
-
 div.forgot-password{
   text-align: right;
   padding: 0px;
@@ -185,6 +181,7 @@ div.error{
   height: 9.5mm;
 }
 
+/* profile */
 .padding {
   padding: 3rem !important
 }
@@ -315,3 +312,16 @@ h6 {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out
 }
+
+.image{
+  background-color: none;
+}
+
+.active-storage-button{
+  display: block;
+  width: 10px;
+  margin-left: 10px;
+  margin-right: 100cm;
+  padding-top: 10px;
+}
+
