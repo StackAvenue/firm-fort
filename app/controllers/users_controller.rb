@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
    
-    redirect_back fallback_location: '/', notice: "Deleted Successfully"
+    redirect_to users_path, notice: "Deleted Successfully"
   end
 
   def search
