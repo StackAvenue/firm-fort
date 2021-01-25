@@ -3,7 +3,6 @@
     <td><%= full_name(search_user) %></td>
     <td><%= search_user.email %></td>
     <td><%= search_user.role.name %></td>
-    <td><%= search_user.invitation_status %></td>
     <td><%= link_to edit_user_path(search_user.id), remote: true  do %>
       <span class="fas fa-pencil-alt" aria-hidden="true"></span>
         <% end %>
