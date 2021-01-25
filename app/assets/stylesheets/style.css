@@ -10,6 +10,9 @@ body{
   margin-top: 1cm;
   margin-left: 38%;
   margin-right: 38%;
+  padding-inline: 20px;
+  padding-top: 1cm;
+  padding-bottom: 1cm;
 }
 
 form h2{
@@ -319,7 +322,7 @@ h6 {
 
 .active-storage-button{
   display: block;
-  width: 10px;
+  width: 5.5cm;
   margin-left: 10px;
   margin-right: 100cm;
   padding-top: 10px;
