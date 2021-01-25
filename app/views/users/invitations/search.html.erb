@@ -12,23 +12,23 @@
         </script>
       <% end %>
     </div>
+    <% if @pending_users.any? %>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <%= render partial: "search_pending_user", collection: @pending_users %>
+      <table>
+      <%= render '/users/shared/pagination' %>
+    <% else %>
+      <div class="alert alert-warning" role="alert">
+        No Results Found!!
+      </div>
+    <% end %>
   </div>
-  <% if @pending_users.any? %>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Status</th>
-        <th></th>
-        <th></th>
-      </tr>
-      <%= render partial: "search_pending_user", collection: @pending_users %>
-    <table>
-    <%= render '/users/shared/pagination' %>
-  <% else %>
-    <div class="alert alert-warning" role="alert">
-      No Results Found!!
-    </div>
-  <% end %>
-</div>
+</div>  
