@@ -2,6 +2,16 @@
 <div class="user">
   <div class="col-md-12">
     <h4>Search Results</h4>
+    <div class="notice">
+      <% if flash.any? %>
+        <script type="text/javascript">
+          <% flash.each do |key, value| %>
+            <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
+            toastr.<%= type %>('<%= value %>')
+          <% end %>
+        </script>
+      <% end %>
+    </div>
     <% if @users.any? %>
       <table>
         <tr>
