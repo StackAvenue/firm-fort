@@ -11,7 +11,6 @@
     <%= f.label :password, "New password" %>
     <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
     
-
     <div class="error" >
       <%= resource.errors.full_messages_for(:password_confirmation).first %>
     </div>
