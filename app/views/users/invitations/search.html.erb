@@ -2,22 +2,33 @@
 <div class="user">
   <div class="col-md-12">
     <h4>Search Results</h4>
-    <% if @pending_users.any? %>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Status</th>
-          <th></th>
-        </tr>
-        <%= render partial: "search_pending_user", collection: @pending_users %>
-      <table>
-      <%= render '/users/shared/pagination' %>
-    <% else %>
-      <div class="alert alert-warning" role="alert">
-        No Results Found!!
-      </div>
-    <% end %>
-  </div> 
+    <div class="notice">
+      <% if flash.any? %>
+        <script type="text/javascript">
+          <% flash.each do |key, value| %>
+            <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
+            toastr.<%= type %>('<%= value %>')
+          <% end %>
+        </script>
+      <% end %>
+    </div>
+  </div>
+  <% if @pending_users.any? %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render partial: "search_pending_user", collection: @pending_users %>
+    <table>
+    <%= render '/users/shared/pagination' %>
+  <% else %>
+    <div class="alert alert-warning" role="alert">
+      No Results Found!!
+    </div>
+  <% end %>
 </div>
