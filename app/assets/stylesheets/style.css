@@ -7,8 +7,12 @@ body{
 /*form*/
 .form{
   background-color: white;
-  border-radius: 5px;
-  padding: 20px;
+  margin-top: 1cm;
+  margin-left: 38%;
+  margin-right: 38%;
+  padding-inline: 20px;
+  padding-top: 1cm;
+  padding-bottom: 1cm;
 }
 
 form h2{
@@ -120,22 +124,28 @@ div.forgot-password{
 
 /* tables */
 .user table {
-  margin-left: 7%;
+  margin-top: 2%;
+  margin-left: 2cm;
   border-collapse: collapse;
-  width: 95%; 
+  width: 90%; 
 }
 
 .user th, td {
-  margin-left: 2cm;
-  text-align: left;
+  text-align: center;
   padding: 8px;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
 }
 
 .user .col-md-12 h4{
   display: inline-block;
   margin-left: 2cm;
   text-align: left;
+}
+
+.search{
+  width:25%; 
+  margin-left:2cm;
 }
 
 div.notice {
@@ -179,6 +189,7 @@ div.error{
   padding: 3rem !important
 }
 
+/* profile card */
 .user-card-full {
   overflow: hidden
 }
@@ -311,7 +322,7 @@ h6 {
 
 .active-storage-button{
   display: block;
-  width: 10px;
+  width: 5.5cm;
   margin-left: 10px;
   margin-right: 100cm;
   padding-top: 10px;

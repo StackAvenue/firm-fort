@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <%= render '/users/shared/tabs' %>
     <h4>Pending Invitations</h4>
-    <form class="search" action="/users/invitation/pending/search" style="float: right">
+    <form class="search" action="/users/invitation/pending/search">
       <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" aria-label="Search">
     </form>
     <div class="notice">
@@ -15,18 +15,18 @@
           <% end %>
         </script>
       <% end %>
-    </div>
-  </div>
-  <table>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Status</th>
-        <th></th>
-        <th></th>
-      </tr>
-      <%= render partial: "pending_user", collection: @pending_users %>
+    </div> 
     <table>
-  <%= render '/users/shared/pagination' %>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <%= render partial: "pending_user", collection: @pending_users %>
+      <table>
+    <%= render '/users/shared/pagination' %>
+  </div>
 </div>

@@ -3,7 +3,6 @@
     <td><%= full_name(user) %></td>
     <td><%= user.email %></td>
     <td><%= user.role.name %></td>
-    <td><%= user.invitation_status %></td>
     <td><%= link_to edit_user_path(user.id), remote: true  do %>
       <span class="fas fa-pencil-alt" aria-hidden="true"></span>
       <% end %>

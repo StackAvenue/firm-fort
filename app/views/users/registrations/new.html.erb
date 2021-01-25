@@ -1,43 +1,38 @@
 <%= stylesheet_link_tag 'style.css' %><br/>
 
-<body style="padding-left: 13cm;padding-right: 13cm;padding-top: 0.5cm">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %><br/>
+<div class="form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <h2>Sign up</h2>
-    
-    <div class="form">
-      <div class="error" >
-        <%= resource.errors.full_messages_for(:first_name).first  %>
-      </div>
-      <%= f.text_field :first_name,placeholder: "First Name", autofocus: true%>
+    <div class="error" >
+      <%= resource.errors.full_messages_for(:first_name).first  %>
+    </div>
+    <%= f.text_field :first_name,placeholder: "First Name", autofocus: true%>
+    <%= f.text_field :last_name,placeholder: "Last Name", autofocus: true %>
 
-      <%= f.text_field :last_name,placeholder: "Last Name", autofocus: true %>
+    <div class="error" >
+      <%= resource.errors.full_messages_for(:email).first %>
+    </div>
+    <%= f.email_field :email,placeholder: "Email", autofocus: true, autocomplete: "email" %><br/>
 
-      <div class="error" >
-        <%= resource.errors.full_messages_for(:email).first %>
-      </div>
-      <%= f.email_field :email,placeholder: "Email", autofocus: true, autocomplete: "email" %><br/>
-
-      <div class="error" >
-        <%= resource.errors.full_messages_for(:organisation).first %>
-      </div>
-      <%= f.select :organisation_id, Organisation.pluck(:name,:id),{prompt:'Organisation'}, 
+    <div class="error" >
+      <%= resource.errors.full_messages_for(:organisation).first %>
+    </div>
+    <%= f.select :organisation_id, Organisation.pluck(:name,:id),{prompt:'Organisation'}, 
                     {class: "form-select"} %><br/>
     
-      <div class="error" >
-        <%= resource.errors.full_messages_for(:password).first %>
-      </div>
-      <%= f.password_field :password,placeholder: "Password", autocomplete: "new-password" %><br/>
-      
-      <div class="error" >
-        <%= resource.errors.full_messages_for(:password_confirmation).first %>
-      </div>
-      <%= f.password_field :password_confirmation,placeholder: "Password Confirmation",
-            autocomplete: "new-password" %>
-
-      <%= f.submit "Sign up" %>
+    <div class="error" >
+      <%= resource.errors.full_messages_for(:password).first %>
     </div>
+    <%= f.password_field :password,placeholder: "Password", autocomplete: "new-password" %><br/>
+      
+    <div class="error" >
+      <%= resource.errors.full_messages_for(:password_confirmation).first %>
+    </div>
+    <%= f.password_field :password_confirmation,placeholder: "Password Confirmation",
+            autocomplete: "new-password" %>
+    <%= f.submit "Sign up" %>
     <div class="align-right">
       Already have an Account? <%= link_to "Log in", new_session_path(resource_name) %>
     </div>
   <% end %>
-</body>
+</div>
