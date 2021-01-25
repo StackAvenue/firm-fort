@@ -109,7 +109,7 @@ div.forgot-password{
 .w3-sidebar{
   list-style: none;
   background: white;
-  width: 6%;
+  width: 5.5%;
 }
 
 .w3-sidebar ul{
@@ -131,7 +131,7 @@ div.forgot-password{
 }
 
 .user th, td {
-  text-align: center;
+  text-align: left;
   padding: 8px;
   border: 1px solid #ddd;
   border-collapse: collapse;
