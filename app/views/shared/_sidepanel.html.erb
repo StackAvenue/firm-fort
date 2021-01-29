@@ -7,9 +7,11 @@
         </button>
       </li>
       <li>
-        <button class="btn btn-light btn-block">
-          <%=link_to sanitize('<i class="fas fa-2x fa-users"></i>'), users_path %>
-        </button>
+        <% if can? :index, User %>
+          <button class="btn btn-light btn-block">
+            <%=link_to sanitize('<i class="fas fa-2x fa-users"></i>'), users_path %>
+          </button>
+        <% end %>
       </li>
     </ul>
   </div>
