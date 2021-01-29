@@ -10,7 +10,7 @@
   <% end %>
 </div>
 <a style="float: right; margin-right: 1cm; margin-top:1cm;" class="btn btn-info" 
-  <%= link_to "Change Password", edit_user_registration_path, remote: true %>
+  <%= link_to "Change Password", user_edit_registration_path(current_user.id), remote: true %>
 </a>
 <div id='edit_user_password'></div>
 <div class="page-content page-container" id="page-content">
