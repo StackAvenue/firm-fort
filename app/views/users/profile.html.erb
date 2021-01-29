@@ -1,14 +1,5 @@
 <%= stylesheet_link_tag 'style.css' %>
-<div class="notice">
-  <% if flash.any? %>
-    <script type="text/javascript">
-      <% flash.each do |key, value| %>
-        <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
-        toastr.<%= type %>('<%= value %>')
-      <% end %>
-    </script>
-  <% end %>
-</div>
+<%= render '/users/shared/notification' %>
 <div class="page-content page-container" id="page-content">
   <div class="padding">
     <div class="row container d-flex justify-content-center", style="margin-left:2cm;">
