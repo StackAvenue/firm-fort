@@ -17,14 +17,12 @@
           <%= f.label :password %>
           <%= f.password_field :password, autocomplete: "new-password" %>
           
-
           <div class="error" >
             <%= resource.errors.full_messages_for(:password_confirmation).first  %>
           </div>
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           
-
           <div class="error" >
             <%= resource.errors.full_messages_for(:current_password).first  %>
           </div>
