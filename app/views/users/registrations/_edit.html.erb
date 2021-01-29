@@ -14,7 +14,7 @@
           <div class="error" >
             <%= resource.errors.full_messages_for(:password).first  %>
           </div>
-          <%= f.label :password %>
+          <%= f.label :new_password %>
           <%= f.password_field :password, autocomplete: "new-password" %>
           
           <div class="error" >
@@ -23,12 +23,6 @@
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           
-          <div class="error" >
-            <%= resource.errors.full_messages_for(:current_password).first  %>
-          </div>
-          <%= f.label :current_password %>
-          <%= f.password_field :current_password, autocomplete: "current-password" %>
-        
           <div class="modal-footer">
             <%= f.submit "Update" %>
           </div>
