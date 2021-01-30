@@ -21,8 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        sign_in @user, :bypass => true
-        format.html { redirect_back fallback_location: '/', notice: "Password Updated Successfully" }
+        format.html { redirect_back fallback_location: '/' }
       else
         format.js { render "edit" }
       end
