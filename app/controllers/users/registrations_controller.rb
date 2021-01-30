@@ -14,6 +14,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_back fallback_location: '/' }
+      else
+        format.js { render "edit" }
+      end
+    end
+  end
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :gender, :role_id, :organisation_id, 
                                 :email, :password, :password_confirmation)

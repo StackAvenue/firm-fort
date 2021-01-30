@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'users/search', to: 'users#search'
     get '/users/invitation/pending/search', to: "users/invitations#search"
     get '/users/profile/:id', to: 'users#profile', as: 'users_profile'
+    get '/users/registrations/edit/:id', to: 'users/registrations#edit', as: 'user_edit_registration'
   end
 
   resources :users
