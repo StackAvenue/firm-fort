@@ -14,6 +14,7 @@ class Users::InvitationsController < Devise::InvitationsController
 
   def pending
     @pagy, @pending_users = pagy(User.where(invitation_status: "Pending"), items: 7)
+    authorize! :pending, @pending_users
   end
 
   def resend

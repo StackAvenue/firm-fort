@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def index
     @pagy, @users = pagy(User.all)
+    authorize! :index, @users
   end
 
   def edit
