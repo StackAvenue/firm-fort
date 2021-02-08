@@ -17,6 +17,8 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'cancancan'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
@@ -58,6 +60,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'mina'
 end
 
 group :test do
