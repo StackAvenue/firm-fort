@@ -14,7 +14,7 @@ gem 'pagy', '~> 3.9.0'
 
 gem 'omniauth-google-oauth2'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 
 gem 'cancancan'
 
