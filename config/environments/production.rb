@@ -94,12 +94,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: "65.1.52.81"}
 
   config.action_mailer.smtp_settings = {
-    address:              "smtp.gmail.com",
-    port:                 587,
-    user_name:            ENV['SENDGRID_USERNAME'],
-    password:             ENV['SENDGRID_PASSWORD'],
-    authentication:       :login,
-    enable_starttls_auto: true
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => '65.1.52.81',
+    :address        => "smtp.sendgrid.net",
+    :port           => "587",
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 
   # Do not dump schema after migrations.
